@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary-navy: #12304a;
+    --color-primary-teal: #0f766e;
+    --color-secondary-teal: #0d9488;
+    --color-light-cyan: #ddf4f1;
+    --color-page-bg: #f7fafc;
+    --color-card-bg: #ffffff;
+    --color-text-primary: #172b3a;
+    --color-text-secondary: #64748b;
+    --color-border: #e2e8f0;
+    --color-emergency: #b42318;
+    --color-caution: #b45309;
+    --color-routine: #15803d;
+    --color-focus: #155eef;
+
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Manrope', 'DM Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-page-bg);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Design Tokens & Clean Healthcare Components */
+.bg-primary-navy { background-color: #12304a; }
+.text-primary-navy { color: #12304a; }
+.bg-primary-teal { background-color: #0f766e; }
+.text-primary-teal { color: #0f766e; }
+.bg-secondary-teal { background-color: #0d9488; }
+.text-secondary-teal { color: #0d9488; }
+.bg-light-cyan { background-color: #ddf4f1; }
+.text-emergency { color: #b42318; }
+.bg-emergency-subtle { background-color: #fef3f2; border-color: #fee4e2; }
+.text-caution { color: #b45309; }
+.bg-caution-subtle { background-color: #fffbeb; border-color: #fef3c7; }
+.text-routine { color: #15803d; }
+.bg-routine-subtle { background-color: #f0fdf4; border-color: #dcfce7; }
+
+/* Subtle card styling avoiding excessive blur/slop */
+.health-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(18, 48, 74, 0.04), 0 1px 2px rgba(18, 48, 74, 0.02);
+  transition: all 0.2s ease;
+}
+
+.health-card-hover:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(18, 48, 74, 0.07);
+}
+
+.health-input {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  transition: all 0.15s ease;
+}
+.health-input:focus {
+  outline: none;
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+/* Print styles for Handover Summary */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+}

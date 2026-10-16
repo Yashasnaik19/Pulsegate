@@ -1,0 +1,6 @@
+{
+  "name": "PulseGate",
+  "description": "The Right Care. The Right Place. Sooner. Explainable triage, deterministic clinical decision support, and intelligent hospital referral platform for frontline healthcare teams.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
